@@ -1,5 +1,6 @@
 import {Routes, Route} from 'react-router-dom'
 import { SignedIn, SignedOut, RedirectToSignIn } from '@clerk/clerk-react'
+import Layout from "./components/Layout.jsx";
 import Homepage from "./pages/Homepage.jsx";
 import SignInPage from "./pages/SignInPage.jsx";
 import SignUp from "./pages/SignUp.jsx";
@@ -18,7 +19,7 @@ function ProtectedRoute({ children }) {
 function App() {
   return (
     <Routes>
-      <Route path="/" >
+      <Route path="/" element={<Layout />}>
         <Route index element={<Homepage />} />
         <Route path="pricing" element={<PricingPage />} />
         <Route path="{sign-in/*}" element={<SignInPage />} />
