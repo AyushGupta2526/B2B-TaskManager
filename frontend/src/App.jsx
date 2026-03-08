@@ -3,7 +3,7 @@ import { SignedIn, SignedOut, RedirectToSignIn } from '@clerk/clerk-react'
 import Layout from "./components/Layout.jsx";
 import Homepage from "./pages/Homepage.jsx";
 import SignInPage from "./pages/SignInPage.jsx";
-import SignUp from "./pages/SignUp.jsx";
+import SignUpPage from "./pages/SignUp.jsx";
 import DashboardPage from "./pages/DashboardPage.jsx";
 import PricingPage from "./pages/PricingPage.jsx";
 
@@ -22,8 +22,8 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Homepage />} />
         <Route path="pricing" element={<PricingPage />} />
-        <Route path="{sign-in/*}" element={<SignInPage />} />
-        <Route path="sign-up/*" element={<SignUp />} />
+        <Route path="sign-in/*" element={<SignInPage />} />
+        <Route path="sign-up/*" element={<SignUpPage />} />
         <Route path="dashboard/*" element={
           <ProtectedRoute>
             <DashboardPage />
